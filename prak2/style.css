@@ -1,0 +1,165 @@
+
+body {
+   margin: 0;
+   padding: 0;
+   font-family: sans-serif;
+
+   background-color: rgb(0, 0, 0);
+}
+
+/* * {
+   border: 1px solid black;
+} */
+
+
+div,section, ul, h1, h2, h3, p {
+   padding: 0;
+   margin: 0;
+}
+h1, h2{
+   margin: 0 0 10px 0;
+}
+
+nav {
+   position: sticky;
+   top: 0;
+
+   display: flex;
+   justify-content: end;
+   flex-direction: row;
+   align-items: center;
+
+   background-color: var(--color-tran-black);
+}
+
+section {
+   padding: 20px 15px 40px 15px;
+   margin: 40px 30px;
+
+   border-radius: 5px;
+   box-shadow: 0 0 30px var(--color-orange);
+   background-color: var(--color-orange);
+}
+
+li {
+   margin: 15px;
+   list-style: none;
+   display: inline-block;
+   font-size: 1.1em;
+   font-weight: bold;
+
+}
+nav ul li a span:hover{
+   text-shadow: 0 0 30px var(--color-white);
+}
+
+a{
+   color: var(--color-white);
+   text-decoration: none;
+}
+
+
+
+header {
+   padding: 20px 20px;
+   display: flex;
+   justify-content: start;
+   align-items: center;
+
+   background-color: var(--color-lighter-black);
+}
+
+header .profil-text{
+   margin: 0 0 0 20px;
+
+   color: white;
+}
+header .profil-text span{
+   padding: 0 3px;
+   border-radius: 2px;
+   color: var(--color-black);
+   background-color: var(--color-orange);
+}
+header .profil-text p{
+   font-size: .8em;
+}
+
+header .img-profil{
+   object-fit: cover;
+   width: 200px;
+   height: 150px;
+
+   border-radius: 50%;
+}
+
+
+
+.about-container p{
+   text-align: justify;
+}
+.about-container div{
+   display: flex;
+   justify-content: center;
+}
+.about-container .about-video{
+   margin: 20px 0;
+}
+.about-container .about-youtube{
+   margin: 20px 0 0 0;
+}
+
+video {
+   width: 50vw;
+}
+
+table {
+   text-align: center;
+   width: 100%;
+}
+table th,
+table td{
+   padding: 5px;
+}
+table .table-header{
+   background-color: var(--color-darker-orange);
+}
+
+
+
+.contact-container form {
+   margin: 30px 0 0 40px;
+}
+
+.contact-container form input{
+   outline: none;
+   border-radius: 2px;
+   border: none;
+}
+
+.contact-container form p,
+.contact-container form h3{
+   margin: 20px 0 0 0;
+}
+
+.contact-container form button{
+   margin: 20px 0 0 0;
+   padding: 6px 15px;
+   border: none;
+   border-radius: 3px;
+
+   cursor: pointer;
+}
+.contact-container form button:hover{
+   background-color: var(--color-darker-white);
+}
+
+footer {
+   position: static;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+   background-color: var(--color-lighter-black);
+   color: #fff;
+   padding: 10px 0;
+   text-align: center;
+ }

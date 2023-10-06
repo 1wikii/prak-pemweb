@@ -1,0 +1,10 @@
+:root{
+   --color-orange: rgb(214, 139, 0);
+   --color-darker-orange:rgb(145, 102, 22);
+   --color-black: black; 
+   --color-lighter-black: rgb(56, 56, 56);
+   --color-tran-black: rgba(0, 0, 0, 0.747);
+   --color-white: white;
+   --color-darker-white: rgb(189, 189, 189);
+
+}
