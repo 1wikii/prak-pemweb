@@ -154,12 +154,12 @@ table .table-header{
 }
 
 footer {
+   padding: 15px 0;
    position: static;
    bottom: 0;
    left: 0;
    width: 100%;
    background-color: var(--color-lighter-black);
-   color: #fff;
-   padding: 10px 0;
+   color: var(--color-white);
    text-align: center;
  }
