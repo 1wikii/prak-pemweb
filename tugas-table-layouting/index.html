@@ -4,6 +4,9 @@
    Kelas : RB
  -->
 
+<!-- ------------------------RESPONSIVE DESIGN-------------------------- -->
+<!-- Click This => https://1wikii.github.io/prak-pemweb/tugas-table-layouting/ -->
+
  <!DOCTYPE html>
  <html lang="en">
  <head>
@@ -39,7 +42,8 @@
       color: white;
     }
 
-    section{
+    section,
+    form{
       margin: 20px 20px;
       padding: 15px;
       border-radius: 5px;
@@ -120,16 +124,29 @@
     .tr-3 .td-3 .div-kiri{
       width: 70%;
     }
+    @media only screen and (max-width: 1200px){
+      .tr-3 .td-3 .div-kiri{
+      width: 50%;
+      }
+    }
+
     .tr-3 .td-3 .div-kanan{
       flex-grow: 1;
       display: flex;
+      flex-direction: column;
+    }
+    @media only screen and (max-width: 1100px){
+      .tr-3 .td-3 .div-kiri{
+        width: 50%;
+      }
     }
 
     .tr-3 .td-3 .div-kiri .personal,
     .tr-3 .td-3 .div-kiri .education,
-    .tr-3 .td-3 .div-kiri .experience{
+    .tr-3 .td-3 .div-kiri .experience,
+    .tr-3 .td-3 .div-kiri .hobby{
       width: 360px;
-      height: 200px;
+      height: 230px;
     }
     .tr-3 .td-3 .div-kiri .about{
       width: 100%;
@@ -155,12 +172,21 @@
       text-decoration: underline;
     }
 
+    .tr-3 .td-3 .div-kiri .hobby ul{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-grow: 1;
+    }
+    .tr-3 .td-3 .div-kiri .hobby ul li{
+      margin: 0px 15px;
+      list-style: none;
+      color: black;
+    }
 
     .tr-3 .td-3 .div-kanan .skill{
       max-width: auto;
-      /* min-width: 0%; */
-      flex-grow: 1;
-      width: 100%;
+      /* flex-grow: 1; */
     }
 
     .tr-3 .td-3 .div-kanan .skill ul li{
@@ -171,7 +197,8 @@
       display: flex;
       align-items: center;
     }
-    .tr-3 .td-3 .div-kanan .skill ul li img{
+    .tr-3 .td-3 .div-kanan .skill ul li img,
+    .tr-3 .td-3 .div-kiri .hobby ul li img{
       margin: 0 8px 0 0;
       width: 50px;
       height: auto;
@@ -184,9 +211,41 @@
       border: 1px solid black;
     }
     .tr-3 .td-3 .div-kanan .skill ul li .point{
-      /* width: 65%; */
       height: 100%;
       background-color: black;
+    }
+
+    .tr-3 .td-3 .div-kanan form .container-input{
+      display: flex; 
+      flex-direction: column; 
+      align-items: center;
+    }
+    .tr-3 .td-3 .div-kanan form div input{
+      margin: 10px 0;
+      padding: 8px 8px;
+      width: 70%;
+      border-radius: 3px;
+      border-style: none;
+      font-size: 1em;
+      font-weight: bold;
+      outline: none;
+    }
+    .tr-3 .td-3 .div-kanan form div button{
+      margin: 10px 0;
+      padding: 7px 0;
+      font-size: 1em;
+      font-weight: bold;
+      width: 100px;
+      border-style: none;
+      border-radius: 10px;
+
+      box-sizing: border-box;
+      box-shadow: 0 0 10px white;
+      background-color: antiquewhite;
+    }
+    .tr-3 .td-3 .div-kanan form div button:hover {
+      cursor: pointer;
+      background-color: rgb(221, 206, 187);
     }
 
 
@@ -283,6 +342,16 @@
             </ol>
           </section>
 
+          <section class="hobby" style="display: flex; flex-direction: column;">
+            <h2>Hobby</h2>
+
+            <ul style="padding: 0px 16px ; margin: 0;">
+              <li> <img src="https://drive.google.com/uc?export=view&id=1usV58IV2XQiebftZCFmWhAkbs_AzDmDF" alt="Not Found"> </li>
+              <li> <img src="https://drive.google.com/uc?export=view&id=162wHpwv7MNYCEwzsAzWicuJ5MRJIZN3A" alt="Not Found"> </li>
+              <li> <img src="https://drive.google.com/uc?export=view&id=12pSfcaxJKB4LkcY7eBt9bcKPRp8U---T" alt="Not Found"> </li>
+            </ul>
+          </section>
+
           <section class="about">
             <h2>About Me</h2>
             
@@ -330,6 +399,15 @@
             </div>
 
           </section>
+
+          <form id="form" >
+            <h2 >Comment</h2>
+            <div class="container-input">
+              <input type="text" id="inputNama" placeholder="Nama Kamu...">
+              <input type="text" id="inputKomen" placeholder="Komentar Kamu..."> 
+              <button type="button" onclick="getName()"> Kirim </button>
+            </div>
+          </form>
         </div>
 
       </td>
@@ -348,5 +426,14 @@
 
   </table>
    
+  <script>
+    function getName() {
+      var nama = document.getElementById("inputNama").value;
+      var komen = document.getElementById("inputKomen").value;
+      alert("Terima kasih, " + nama + " sudah berkunjung!\n" + "\nKomentar :\n" +komen);
+      location.reload();
+    }
+  </script>
+
  </body>
  </html>
