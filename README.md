@@ -6,6 +6,6 @@ https://1wikii.github.io/prak-pemweb/prak1/
 https://1wikii.github.io/prak-pemweb/prak2/ 
 
 # tugas-preview
-https://1wikii.github.io/prak-pemweb/tugas-table-layouting/ 
+https://1wikii.github.io/prak-pemweb/tugas-table-layouting/
 
 
