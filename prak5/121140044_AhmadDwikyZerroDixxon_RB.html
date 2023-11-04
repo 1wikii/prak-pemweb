@@ -16,6 +16,11 @@
  
  </head>
  <body>
+
+   <audio id="audio" autoplay loop>
+      <source src="interstellar.mp3" type="audio/mp3" />
+      Your browser does not support the audio element.
+   </audio>
     
    <div class="bg"></div>
 
@@ -27,44 +32,64 @@
    <main>
       <section>
          <form>
+            <button id="on" type="submit"> ON </button>
+
            <div class="display">
-             <input id="screen" type="text">
+             <input id="screen" type="text" disabled>
            </div>
            <div>
-             <input type="button" value="AC" onclick="opPad('clr')" class="operator">
-             <input type="button" value="DE" onclick="opPad('del')" class="operator">
-             <input type="button" value="." onclick="opPad('dot')" class="operator">
-             <input type="button" value="/" onclick="opPad('/')" class="operator">
+             <input type="button" value="AC" onclick="opPad('clr')" class="operator" disabled>
+             <input type="button" value="DE" onclick="opPad('del')" class="operator" disabled>
+             <input type="button" value="." onclick="opPad('dot')" class="operator" disabled>
+             <input type="button" value="/" onclick="opPad('/')" class="operator" disabled>
            </div>
            <div>
-             <input type="button" value="7" onclick="numPad('7')">
-             <input type="button" value="8" onclick="numPad('8')">
-             <input type="button" value="9" onclick="numPad('9')">
-             <input type="button" value="x" onclick="opPad('x')" class="operator">
+             <input type="button" value="7" onclick="numPad('7')" disabled>
+             <input type="button" value="8" onclick="numPad('8')" disabled>
+             <input type="button" value="9" onclick="numPad('9')" disabled>
+             <input type="button" value="x" onclick="opPad('x')" class="operator" disabled>
            </div>
            <div>
-             <input type="button" value="4" onclick="numPad('4')">
-             <input type="button" value="5" onclick="numPad('5')">
-             <input type="button" value="6" onclick="numPad('6')">
-             <input type="button" value="-" onclick="opPad('-')" class="operator">
+             <input type="button" value="4" onclick="numPad('4')" disabled>
+             <input type="button" value="5" onclick="numPad('5')" disabled>
+             <input type="button" value="6" onclick="numPad('6')" disabled>
+             <input type="button" value="-" onclick="opPad('-')" class="operator" disabled>
            </div>
            <div>
-             <input type="button" value="1" onclick="numPad('1')">
-             <input type="button" value="2" onclick="numPad('2')">
-             <input type="button" value="3" onclick="numPad('3')">
-             <input type="button" value="+" onclick="opPad('+')" class="operator">
+             <input type="button" value="1" onclick="numPad('1')" disabled>
+             <input type="button" value="2" onclick="numPad('2')" disabled>
+             <input type="button" value="3" onclick="numPad('3')" disabled>
+             <input type="button" value="+" onclick="opPad('+')" class="operator" disabled>
            </div>
            <div>
-             <input type="button" value="00" onclick="numPad('00')">
-             <input type="button" value="0" onclick="numPad('0')">
-             <input type="button" value="=" onclick="opPad('=')" class="equal operator">
+             <input type="button" value="00" onclick="numPad('00')" disabled>
+             <input type="button" value="0" onclick="numPad('0')" disabled>
+             <input type="button" value="=" onclick="opPad('=')" class="equal operator" disabled>
             
            </div>
          </form>
       </section>
    </main>
  
-    <script> 
+    <script>
+      
+      const button = document.getElementById('on');
+      const audio = document.getElementById('audio');
+
+      const input = document.getElementsByTagName('input');
+
+      button.addEventListener('click', function() {
+         button.style.color = "#1ed1b0";
+         button.disabled = true;
+         audio.play();
+
+         for (var i = 0; i < input.length; i++) {
+            input[i].disabled = false;
+            input[i].style.filter = "none";
+         }
+
+      });
+
       displaying('0');
       function getScreen(){
          let screen = document.getElementById('screen').value.toString();
