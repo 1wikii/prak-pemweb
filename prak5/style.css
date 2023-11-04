@@ -131,7 +131,7 @@ section form input{
 }
 
 input{
-   filter: blur(4px);
+   filter: blur(5px);
 }
 
 form #on{
