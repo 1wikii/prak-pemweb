@@ -17,8 +17,8 @@
  </head>
  <body>
 
-   <audio autoplay loop>
-      <source src="interstellar.mp3" type="audio/mp3">
+   <audio id="audio" loop>
+      <source src="interstellar.mp3" type="audio/mp3" />
       Your browser does not support the audio element.
    </audio>
     
@@ -70,6 +70,12 @@
    </main>
  
     <script> 
+
+      document.addEventListener('DOMContentLoaded', function() {
+         let audio = document.getElementById('audio');
+         audio.play();
+      });
+
       displaying('0');
       function getScreen(){
          let screen = document.getElementById('screen').value.toString();
